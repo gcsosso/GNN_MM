@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
+scipy = "*"
+ase = "*"
+quippy-ase = "*"
+rdkit = "*"
+torch = "*"
+torch_geometric = "*"
+#torch_scatter = "*"
+#torch_sparse = "*"
+#torch_cluster = "*"
+seaborn = "*"
+matplotlib = "*"
+jupyter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
