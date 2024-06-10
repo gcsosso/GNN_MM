@@ -11,11 +11,23 @@ A Multimodal Approach to Optimize Molecular Representations for Graph-Based Prop
 - CUDA support for accelerated computation.
 
 ## Environment Setup
-- It is recommended to run the code in a Python virtual environment or a Conda environment to manage dependencies efficiently.
+- It is recommended to run the code in a Python virtual environment or a Conda environment (general instructions provided below) to manage dependencies efficiently.
 - The necessary modules are listed in a requirements text file provided in the repository. Install them using `pip install -r requirements.txt`.
 - Data should be organized in a `data` directory, containing:
   - A CSV file with target values named `targets.csv`.
   - A `xyz` folder with atomic coordinates for each molecule, where filenames correspond to entries in the CSV file.
+    
+### General CUDA setup for Linux
+
+Create a conda environment for PyTorch using `torch-env.yml`:
+
+```bash
+conda env create -f torch-env.yml
+conda activate torch-env
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install botorch -c pytorch -c gpytorch -c conda-forge
+conda install pyg -c pyg
+```
 
 ### Data CSV Format
 The CSV file should have three columns: `Name`, `Target`, `SMILES`, where each row represents a molecule with its corresponding xyz filename, target value, and SMILES string.
